@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DirectFarm Marketplace - Fresh Produce Directly From Farmers</title>
+    <link rel="icon" type="image/svg+xml" href="logo-icon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="marketplace.css">
+</head>
+<body>
+    
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo-icon.svg" alt="DirectFarm Logo">
+            <span class="logo-text">DirectFarm</span>
+        </a>
+        <ul>
+            <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+            <li><a href="marketplace.html" class="active"><i class="bi bi-shop"></i> Marketplace</a></li>
+            <li><a href="index.html#about"><i class="bi bi-info-circle"></i> About Us</a></li>
+            <li><a href="index.html#contact"><i class="bi bi-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div id="nav-user-greeting" class="nav-user-greeting" style="display: none;">
+                <i class="bi bi-person-circle"></i> <span id="user-display-name">User</span>
+            </div>
+            <button id="nav-cart-btn" class="nav-cart-btn">
+                <i class="bi bi-cart3"></i> Cart <span id="cart-badge" class="cart-badge">0</span>
+            </button>
+            <div id="auth-nav-buttons">
+                
+            </div>
+        </div>
+    </nav>
+
+    <header class="marketplace-header">
+        <h1>DirectFarm Marketplace</h1>
+        <p>Fresh vegetables, fruits, grains, pure oils, and spices directly from verified local farmers to your home.</p>
+        <div class="direct-farm-promise">
+            <i class="bi bi-shield-check"></i> 100% Direct to Farmer • 0% Middleman Commission • Fair Prices for All
+        </div>
+    </header>
+
+    <div class="filter-container">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search fresh produce or farm name...">
+            <button id="search-button" title="Search"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="category-filter">
+            <select id="category-select">
+                <option value="all">All Categories</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="fruits">Fruits</option>
+                <option value="grains">Grains & Pulses</option>
+                <option value="dairy">Dairy Products</option>
+                <option value="liquid">Pure Oils & Liquids</option>
+                <option value="spices">Fresh Spices</option>
+            </select>
+        </div>
+        <div class="price-filter">
+            <select id="price-select">
+                <option value="all">Any Price</option>
+                <option value="0-100">Below ₹100</option>
+                <option value="100-300">₹100 - ₹300</option>
+                <option value="300-500">₹300 - ₹500</option>
+                <option value="500+">Above ₹500</option>
+            </select>
+        </div>
+        <div class="sort-filter">
+            <select id="sort-select">
+                <option value="default">Sort by: Recommended</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+            </select>
+        </div>
+    </div>
+
+    <main class="products-container" id="products">
+        
+    </main>
+
+    <div id="product-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('product-details-modal')">&times;</span>
+            <h2 id="modal-product-title" class="modal-title">Produce Details</h2>
+            <div id="modal-product-body">
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="direct-message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('direct-message-modal')">&times;</span>
+            <h2 class="modal-title"><i class="bi bi-chat-dots"></i> Message Farmer Directly</h2>
+            <p style="font-size: 13px; color: var(--text-light); margin-bottom: 15px;">
+                Ask questions about bulk orders, harvesting dates, or chemical-free practices. Your message goes straight to the farmer's dashboard.
+            </p>
+            <form id="direct-message-form">
+                <input type="hidden" id="msg-farmer-id">
+                <input type="hidden" id="msg-farm-name">
+                <div class="modal-form-group">
+                    <label for="msg-to-farm">Farmer / Farm</label>
+                    <input type="text" id="msg-to-farm" readonly style="background: #f1f5f9; cursor: not-allowed;">
+                </div>
+                <div class="modal-form-group">
+                    <label for="msg-consumer-name">Your Full Name *</label>
+                    <input type="text" id="msg-consumer-name" required placeholder="Priya Sharma">
+                </div>
+                <div class="modal-form-group">
+                    <label for="msg-consumer-phone">Your Contact Phone *</label>
+                    <input type="tel" id="msg-consumer-phone" required placeholder="9876543210">
+                </div>
+                <div class="modal-form-group">
+                    <label for="msg-subject">Subject</label>
+                    <input type="text" id="msg-subject" placeholder="e.g. Bulk harvest order inquiry">
+                </div>
+                <div class="modal-form-group">
+                    <label for="msg-content">Message *</label>
+                    <textarea id="msg-content" required placeholder="Type your message for the farmer..."></textarea>
+                </div>
+                <button type="submit" class="btn-checkout" style="background-color: var(--primary-color);">
+                    <i class="bi bi-send"></i> Send Message Directly to Farmer
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cart-modal')">&times;</span>
+            <h2 class="modal-title"><i class="bi bi-cart3"></i> Your Direct Farm Cart</h2>
+            <div id="cart-items-container" class="cart-items-list">
+                
+            </div>
+            <div class="cart-summary">
+                <div class="cart-savings-banner">
+                    <i class="bi bi-patch-check-fill"></i>
+                    <span>Middleman Commission: ₹0.00 (100% to Farmers)</span>
+                </div>
+                <div class="cart-total-row">
+                    <span>Order Total:</span>
+                    <span id="cart-total-amount" style="color: var(--primary-color);">₹0.00</span>
+                </div>
+                <button id="cart-proceed-checkout" class="btn-checkout">
+                    Proceed to Direct Checkout <i class="bi bi-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('checkout-modal')">&times;</span>
+            <h2 class="modal-title"><i class="bi bi-bag-check"></i> Complete Direct Order</h2>
+            <p style="font-size: 13px; color: var(--text-light); margin-bottom: 15px;">
+                You are ordering directly from local farmers. No middlemen cut. Pay upon delivery directly to the farmer.
+            </p>
+            <form id="checkout-form">
+                <div class="modal-form-group">
+                    <label for="checkout-name">Your Full Name *</label>
+                    <input type="text" id="checkout-name" required placeholder="Priya Sharma">
+                </div>
+                <div class="modal-form-group">
+                    <label for="checkout-phone">Phone Number (For Farmer Delivery) *</label>
+                    <input type="tel" id="checkout-phone" required placeholder="9876543210">
+                </div>
+                <div class="modal-form-group">
+                    <label for="checkout-address">Delivery Address *</label>
+                    <input type="text" id="checkout-address" required placeholder="Flat 4B, Green View Enclave, Kolkata">
+                </div>
+                <div class="modal-form-group">
+                    <label for="checkout-payment">Direct Payment Method *</label>
+                    <select id="checkout-payment" required>
+                        <option value="Cash on Delivery (Direct to Farmer)">Cash on Delivery (Direct to Farmer on harvest delivery)</option>
+                        <option value="UPI on Delivery (Direct to Farmer)">Direct UPI on Delivery (Scan Farmer QR code)</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label for="checkout-notes">Special Instructions for Farmer (Optional)</label>
+                    <textarea id="checkout-notes" placeholder="e.g. Please harvest in early morning, deliver before 11 AM..."></textarea>
+                </div>
+                <div style="background: #f8fafc; padding: 12px; border-radius: 6px; margin-bottom: 15px; font-size: 14px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                        <span>Produce Subtotal:</span>
+                        <strong id="checkout-subtotal">₹0.00</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; color: #15803d; font-size: 13px;">
+                        <span>Middleman Cut:</span>
+                        <span>₹0.00 (Zero Fee)</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-checkout">
+                    <i class="bi bi-check-circle"></i> Place Order Directly with Farmers
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="order-success-modal" class="modal">
+        <div class="modal-content" style="text-align: center;">
+            <div style="font-size: 50px; color: #16a34a; margin-bottom: 10px;">
+                <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <h2 class="modal-title" style="color: #16a34a;">Order Placed Successfully!</h2>
+            <p style="font-size: 15px; margin-bottom: 15px;">
+                Thank you for supporting our local farmers directly!
+            </p>
+            <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: left; font-size: 14px;">
+                <p><strong>Order ID:</strong> <span id="success-order-id">DF-0000</span></p>
+                <p><strong>Total Amount:</strong> <span id="success-order-total" style="color: var(--primary-color); font-weight: 700;">₹0.00</span></p>
+                <p><strong>Delivery Address:</strong> <span id="success-order-address">Address</span></p>
+                <p><strong>Direct Impact:</strong> <span style="color: #16a34a; font-weight: 600;">100% of this payment will be handed directly to the farmers!</span></p>
+            </div>
+            <button class="btn-checkout" onclick="closeModal('order-success-modal')">Continue Shopping</button>
+        </div>
+    </div>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <footer>
+        <p class="footer-mission">
+            DirectFarm connects local farmers directly with consumers and retailers, bypassing exploitative middlemen to secure fair profit for farmers and authentic freshness for consumers.
+        </p>
+        <div class="social-links">
+            <a href="#" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" target="_blank" title="Twitter"><i class="bi bi-twitter"></i></a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 DirectFarm. All rights reserved. Zero Middlemen Initiative.</p>
+        </div>
+    </footer>
+
+    <script src="load-auth.js"></script>
+    <script src="marketplace.js"></script>
+</body>
+</html>

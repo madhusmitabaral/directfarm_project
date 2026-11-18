@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DirectFarm - Direct Connection Between Farmers & Consumers</title>
+    <link rel="icon" type="image/svg+xml" href="logo-icon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo-icon.svg" alt="DirectFarm Logo">
+            <span class="logo-text">DirectFarm</span>
+        </a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="#mission">Why Direct?</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div id="nav-auth-container" style="display: flex; align-items: center; gap: 10px;">
+            
+        </div>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome to DirectFarm</h1>
+        <p>Connecting Farmers directly with Consumers — Eliminating Middlemen so Farmers earn 100% of their profits and Consumers get pure, farm-fresh produce at fair prices!</p>
+        <div class="hero-stats-banner">
+            <span><i class="bi bi-shield-check"></i> 0% Middleman Commission</span>
+            <span><i class="bi bi-patch-check"></i> 100% Direct Farmer Profit</span>
+            <span><i class="bi bi-truck"></i> Harvest-to-Table Freshness</span>
+        </div>
+    </section>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" alt="Farmer in field">
+            <div class="slide-content">
+                <h2>100% DIRECT FAIR TRADE</h2>
+                <h1>NO MIDDLEMEN.<br>FAIR PROFIT FOR FARMERS.</h1>
+                <a href="register.html" class="cta-btn">Join as a Farmer</a>
+            </div>
+        </div>
+        <div class="mySlides fade">
+            <img src="https://techcentral.co.za/wp-content/uploads/2024/01/supermarket-food-1500-800.jpg" alt="Farm to table">
+            <div class="slide-content">
+                <h2>FARM-FRESH PRODUCE</h2>
+                <h1>FROM HARVEST<br>STRAIGHT TO YOUR TABLE</h1>
+                <a href="marketplace.html" class="cta-btn">Browse Marketplace</a>
+            </div>
+        </div>
+        <div class="mySlides fade">
+            <img src="https://thecreativeadventurer.com/wp-content/uploads/2023/06/The-Creative-Adventurer_1200x675_ProvenceMarkets-900x470.jpg" alt="Local farm produce market">
+            <div class="slide-content">
+                <h2>CHEMICAL-FREE & PURE</h2>
+                <h1>SUPPORT LOCAL<br>FARMING FAMILIES</h1>
+                <a href="#mission" class="cta-btn">Learn More</a>
+            </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <div style="text-align:center; margin-bottom: 2rem;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <section class="mission-comparison-section" id="mission">
+        <div class="section-title-wrap">
+            <h2>The Middleman Crisis vs. The DirectFarm Solution</h2>
+            <p>Why eliminating intermediaries changes everything for Indian agriculture and health</p>
+        </div>
+
+        <div class="comparison-grid">
+            
+            <div class="comparison-card bad">
+                <div class="comparison-card-header">
+                    <i class="bi bi-x-octagon-fill"></i>
+                    <h3>Traditional Middleman Mandi System</h3>
+                </div>
+                <ul class="comparison-points">
+                    <li><i class="bi bi-dash-circle"></i> <strong>3 to 5 Intermediaries:</strong> Produce passes through commission agents (Aadhati), brokers, and traders before reaching the city.</li>
+                    <li><i class="bi bi-dash-circle"></i> <strong>Farmers Lose 40-50% Profit:</strong> Middlemen extract massive commission fees, transport margins, and forced distress cuts.</li>
+                    <li><i class="bi bi-dash-circle"></i> <strong>Delayed Payments:</strong> Farmers often wait weeks or months for their money or get trapped in credit cycles.</li>
+                    <li><i class="bi bi-dash-circle"></i> <strong>Consumers Pay Inflated Prices:</strong> You pay 2x to 3x more for vegetables and fruits that sat in godowns for days.</li>
+                </ul>
+            </div>
+
+            <div class="comparison-card good">
+                <div class="comparison-card-header">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <h3>DirectFarm Direct Connection</h3>
+                </div>
+                <ul class="comparison-points">
+                    <li><i class="bi bi-check-lg"></i> <strong>Zero Intermediaries:</strong> Consumers buy straight from verified local farmers with complete transparency.</li>
+                    <li><i class="bi bi-check-lg"></i> <strong>100% Profit to the Farmer:</strong> Farmers set their own direct prices and keep 100% of every rupee earned.</li>
+                    <li><i class="bi bi-check-lg"></i> <strong>Direct Instant Payment:</strong> Consumers pay farmers directly via Cash or direct UPI upon harvest delivery.</li>
+                    <li><i class="bi bi-check-lg"></i> <strong>Harvest-Fresh Quality:</strong> Produce is harvested same-day or fresh from the farm, tasting authentic and pure.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories-section">
+        <div class="section-title-wrap">
+            <h2>Explore Farm-Fresh Produce</h2>
+            <p>From organic greens to cold-pressed oils, direct from the fields</p>
+        </div>
+        <div class="category-cards">
+            <a href="marketplace.html" class="cat-card">
+                <i class="bi bi-flower1"></i>
+                <h4>Vegetables</h4>
+                <span>Tomatoes, leafy greens, root veggies</span>
+            </a>
+            <a href="marketplace.html" class="cat-card">
+                <i class="bi bi-apple"></i>
+                <h4>Fresh Fruits</h4>
+                <span>Seasonal mangoes, berries, apples</span>
+            </a>
+            <a href="marketplace.html" class="cat-card">
+                <i class="bi bi-boxes"></i>
+                <h4>Grains & Pulses</h4>
+                <span>Organic wheat, paddy rice, millets, dals</span>
+            </a>
+            <a href="marketplace.html" class="cat-card">
+                <i class="bi bi-cup-straw"></i>
+                <h4>Farm Dairy</h4>
+                <span>Pure cow milk, ghee, paneer, curd</span>
+            </a>
+            <a href="marketplace.html" class="cat-card">
+                <i class="bi bi-droplet-fill"></i>
+                <h4>Cold-Pressed Oils</h4>
+                <span>Pure mustard, coconut, groundnut oils</span>
+            </a>
+            <a href="marketplace.html" class="cat-card">
+                <i class="bi bi-stars"></i>
+                <h4>Authentic Spices</h4>
+                <span>Sun-dried turmeric, black pepper, cumin</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="how-it-works-section" id="how-it-works">
+        <div class="section-title-wrap">
+            <h2>How DirectFarm Works</h2>
+            <p>Simple, transparent, and direct for both parties</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h4>Farmers List Harvest</h4>
+                <p>Farmers create an account and list their available harvest with direct prices, photos, and farm location.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h4>Consumers Order Directly</h4>
+                <p>Consumers browse local farm products, compare prices, check farmer details, and place direct purchase orders.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h4>Harvest & Direct Payment</h4>
+                <p>Produce is harvested fresh and delivered directly. 100% of payment goes straight to the farmer on delivery!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About DirectFarm</h2>
+        <p>
+            DirectFarm was born out of a crucial realization: despite working grueling hours under the scorching sun, our farmers receive only a small fraction of the retail food price due to multiple layers of middleman interference.
+        </p>
+        <p>
+            By leveraging technology to build a direct bridge, DirectFarm eliminates unnecessary brokers and commission cuts. Farmers gain financial independence, fair livelihood, and pride in their craft, while consumers receive pure, chemical-free food directly from the hands that grew it.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact DirectFarm</h2>
+        <p>Have questions, need farmer onboarding assistance, or want to collaborate with our zero-middleman movement? Get in touch with us!</p>
+        
+        <div class="contact-card">
+            <div class="contact-row">
+                <i class="bi bi-envelope"></i>
+                <span><strong>Email:</strong> contact@directfarm.org</span>
+            </div>
+            <div class="contact-row">
+                <i class="bi bi-telephone"></i>
+                <span><strong>Farmer Helpline:</strong> +91 98765 43210 / (0342) 265-4321</span>
+            </div>
+            <div class="contact-row">
+                <i class="bi bi-geo-alt"></i>
+                <span><strong>Agro Center:</strong> UIT Campus, Golapbag, Burdwan, West Bengal, 713104</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" target="_blank" title="Twitter"><i class="bi bi-twitter"></i></a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 DirectFarm. Connecting Farmers & Consumers Directly • Zero Middleman Initiative.</p>
+        </div>
+    </footer>
+
+    <script src="load-auth.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const store = window.DirectFarm || window.authService;
+        const navContainer = document.getElementById("nav-auth-container");
+
+        if (store && navContainer) {
+            const user = store.getCurrentUser();
+            if (user) {
+                if (user.userType === "farmer") {
+                    navContainer.innerHTML = `
+                        <span style="font-size: 13px; font-weight: 500; color: #166534;"><i class="bi bi-person-circle"></i> ${user.name}</span>
+                        <a href="farmer.html" class="btn nav-auth-btn"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                        <a href="#" class="logout-button" id="index-logout-btn">Logout</a>
+                    `;
+                } else {
+                    navContainer.innerHTML = `
+                        <span style="font-size: 13px; font-weight: 500;"><i class="bi bi-person-circle"></i> ${user.name}</span>
+                        <a href="marketplace.html" class="btn nav-auth-btn"><i class="bi bi-cart3"></i> Marketplace</a>
+                        <a href="#" class="logout-button" id="index-logout-btn">Logout</a>
+                    `;
+                }
+
+                document.getElementById("index-logout-btn").addEventListener("click", (e) => {
+                    e.preventDefault();
+                    if (confirm("Are you sure you want to log out?")) {
+                        store.logout();
+                        window.location.reload();
+                    }
+                });
+            } else {
+                navContainer.innerHTML = `
+                    <a href="login.html" class="nav-auth-btn" style="background: transparent; color: var(--primary-color) !important; border: 1px solid var(--primary-color);">Sign In</a>
+                    <a href="register.html" class="publish-btn">Join / Register</a>
+                `;
+            }
+        }
+    });
+
+    /* Slideshow Logic */
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+        if (slides.length === 0) return;
+
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        if (dots[slideIndex - 1]) {
+            dots[slideIndex - 1].className += " active";
+        }
+    }
+
+    setInterval(() => {
+        plusSlides(1);
+    }, 6000);
+    </script>
+</body>
+</html>
